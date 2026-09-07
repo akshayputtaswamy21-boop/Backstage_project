@@ -47,7 +47,7 @@ jobs:
           . .venv/bin/activate
           python -m pip install --upgrade pip
           echo ${{needs.ci.outputs.commit_id}}
-          pip3 install yq
+          pip install yq
           yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app/values.yaml
 
       - name: Commit changes
