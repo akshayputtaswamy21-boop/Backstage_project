@@ -2,17 +2,17 @@ replicaCount: 1
 image:
   repository: akshayputtaswmy/python-app
   pullPolicy: IfNotPresent
-  tag: v2
+  tag: 77a9d9
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: ''
+fullnameOverride: ''
 podAnnotations: {}
 podLabels: {}
 serviceAccount:
   create: false
   automount: true
   annotations: {}
-  name: ""
+  name: ''
 podSecurityContext: {}
 securityContext: {}
 service:
@@ -20,7 +20,7 @@ service:
   port: 5000
 ingress:
   enabled: true
-  className: "nginx"
+  className: nginx
   annotations: {}
   hosts:
     - host: python-app.test.com
