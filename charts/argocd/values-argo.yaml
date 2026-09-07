@@ -1,10 +1,10 @@
+global:
+  domain: argocd.test.com
+
 redis-ha:
   enabled: false
 
 controller:
-  replicas: 1
-
-server:
   replicas: 1
 
 repoServer:
@@ -13,16 +13,19 @@ repoServer:
 applicationSet:
   replicas: 1
 
-global:
-  domain: argocd.test.com
-
 certificate:
   enabled: true
 
 server:
+  replicas: 1
   ingress:
-    annotations:
-      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     enabled: true
     ingressClassName: nginx
-    tls: true
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    hosts:
+      - argocd.test.com
+    tls:
+      - secretName: argocd-server-tls
+        hosts:
+          - argocd.test.com
