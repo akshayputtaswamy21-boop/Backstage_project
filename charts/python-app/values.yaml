@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: akshayputtaswmy/python-app
   pullPolicy: IfNotPresent
-  tag: 77a9d9
+  tag: 543e4f
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: ''
